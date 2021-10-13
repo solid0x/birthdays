@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct BirthdaysApp: App {
+    @Environment(\.scenePhase) var scenePhase
+    
     @StateObject var firstLaunch = FirstLaunch()
     @StateObject var birthdayList = BirthdayList()
     
@@ -21,6 +23,8 @@ struct BirthdaysApp: App {
                     birthdayList.update()
                 }
             }
+        }.onChange(of: scenePhase) { _ in
+            PersistenceController.shared.save()
         }
     }
 }

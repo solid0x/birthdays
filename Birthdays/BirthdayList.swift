@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreData
+import Contacts
 
 class BirthdayList: ObservableObject {
     @Published var birthdays = [Birthday]()
@@ -26,6 +28,10 @@ class BirthdayList: ObservableObject {
         birthdays.isEmpty
     }
     
+    var maxId: Int32 {
+        isEmpty ? -1 : birthdays.max { a, b in a.id < b.id }!.id
+    }
+    
     var hasAccessToContacts: Bool {
         ContactsViewer.authStatus == .authorized
     }
@@ -35,29 +41,36 @@ class BirthdayList: ObservableObject {
     }
     
     func update() {
+        birthdays = PersistenceController.shared.getAllBirthdays()
+        
         if ContactsViewer.hasAccessToContacts {
             let contacts = ContactsViewer.getContacts()
             for contact in contacts {
                 if let contactBirthday = contact.birthday {
-                    let birthday = Birthday(id: birthdays.count, date: Date.from(contactBirthday), of: "\(contact.givenName) \(contact.familyName)")
-                    birthdays.append(birthday)
+                    if !birthdays.contains(contact) {
+                        let birthday = Birthday(context: PersistenceController.shared.context)
+                        birthday.id = maxId + 1
+                        birthday.date = Date.from(contactBirthday)
+                        birthday.of = Birthday.nameFor(contact)
+                        birthdays.append(birthday)
+                    }
                 }
             }
         }
+        
+        PersistenceController.shared.save()
     }
 }
 
-struct Birthday: Identifiable {
-    var id: Int
-    var date: Date
-    var of: String
-}
-
 extension Birthday {
+    static func nameFor(_ contact: CNContact) -> String {
+        "\(contact.givenName) \(contact.familyName)"
+    }
+    
     var nextDate: Date {
-        var nextBirthday = Date.from(year: Date.today.year, month: date.month, day: date.day)
+        var nextBirthday = Date.from(year: Date.today.year, month: date!.month, day: date!.day)
         if Date.today.after(nextBirthday) {
-            nextBirthday = Date.from(year: Date.today.year + 1, month: date.month, day: date.day)
+            nextBirthday = Date.from(year: Date.today.year + 1, month: date!.month, day: date!.day)
         }
         return nextBirthday
     }
@@ -74,6 +87,14 @@ extension Birthday {
 extension Array {
     var range: Range<Int> {
         return 0..<self.endIndex
+    }
+}
+
+extension Array where Element : Birthday {
+    func contains(_ contact: CNContact) -> Bool {
+        let date = Date.from(contact.birthday!)
+        let of = Birthday.nameFor(contact)
+        return self.contains(where: { $0.date == date && $0.of == of })
     }
 }
 

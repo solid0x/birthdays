@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Constants {
+    struct Persistence {
+        static let ContainerName = "Main"
+    }
     struct FirstLaunch {
         static let IconSize: CGFloat = 100
         static let AllowAccessBtnPadding: CGFloat = 20

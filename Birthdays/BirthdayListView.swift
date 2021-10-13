@@ -57,7 +57,7 @@ struct BirthdayListRow: View {
     
     var body: some View {
         HStack {
-            Text(birthday.of).font(.headline)
+            Text(birthday.of!).font(.headline)
             Spacer()
             if birthday.daysToNextDate == 0 {
                 Image(systemName: "gift").foregroundColor(.blue)
