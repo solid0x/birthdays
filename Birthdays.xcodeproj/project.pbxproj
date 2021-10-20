@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B6651622717024200563295 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B6651602717024200563295 /* Main.xcdatamodeld */; };
+		2B665164271704FB00563295 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B665163271704FB00563295 /* Persistence.swift */; };
 		2B96B2B1270DED290093D43B /* BirthdayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B0270DED290093D43B /* BirthdayList.swift */; };
 		2B96B2B3270DEDA00093D43B /* FirstLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B2270DEDA00093D43B /* FirstLaunchView.swift */; };
 		2B96B2B5270DEDBA0093D43B /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B4270DEDBA0093D43B /* FirstLaunch.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B6651612717024200563295 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		2B665163271704FB00563295 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2B96B2B0270DED290093D43B /* BirthdayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayList.swift; sourceTree = "<group>"; };
 		2B96B2B2270DEDA00093D43B /* FirstLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchView.swift; sourceTree = "<group>"; };
 		2B96B2B4270DEDBA0093D43B /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
@@ -116,9 +120,11 @@
 				2B96B2B8270DEE150093D43B /* ContactsViewer.swift */,
 				2B96B2BA270DEE290093D43B /* NotificationManager.swift */,
 				2B96B2BC270DEE3B0093D43B /* DateExtensions.swift */,
+				2B665163271704FB00563295 /* Persistence.swift */,
 				2B96B2BE270DEE580093D43B /* Constants.swift */,
 				2BD0C853270DE9800047B273 /* Assets.xcassets */,
 				2BD0C855270DE9800047B273 /* Preview Content */,
+				2B6651602717024200563295 /* Main.xcdatamodeld */,
 			);
 			path = Birthdays;
 			sourceTree = "<group>";
@@ -278,10 +284,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B665164271704FB00563295 /* Persistence.swift in Sources */,
 				2B96B2B7270DEDDD0093D43B /* BirthdayListView.swift in Sources */,
 				2B96B2B3270DEDA00093D43B /* FirstLaunchView.swift in Sources */,
 				2BD0C850270DE97F0047B273 /* BirthdaysApp.swift in Sources */,
 				2B96B2B1270DED290093D43B /* BirthdayList.swift in Sources */,
+				2B6651622717024200563295 /* Main.xcdatamodeld in Sources */,
 				2B96B2BB270DEE290093D43B /* NotificationManager.swift in Sources */,
 				2B96B2BD270DEE3B0093D43B /* DateExtensions.swift in Sources */,
 				2B96B2B9270DEE150093D43B /* ContactsViewer.swift in Sources */,
@@ -633,6 +641,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2B6651602717024200563295 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2B6651612717024200563295 /* Main.xcdatamodel */,
+			);
+			currentVersion = 2B6651612717024200563295 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2BD0C844270DE97F0047B273 /* Project object */;
 }
