@@ -1,6 +1,7 @@
 import Foundation
 
 extension Date {
+    
     static var today: Date {
         return Date().startOfDay
     }
@@ -71,6 +72,10 @@ extension Date {
     
     func after(_ date: Date, granularity: Calendar.Component = .day) -> Bool {
         Calendar.current.compare(self, to: date, toGranularity: granularity) == .orderedDescending
+    }
+    
+    func before(_ date: Date, granularity: Calendar.Component = .day) -> Bool {
+        Calendar.current.compare(self, to: date, toGranularity: granularity) == .orderedAscending
     }
     
     func equals(_ date: Date, granularity: Calendar.Component = .day) -> Bool {

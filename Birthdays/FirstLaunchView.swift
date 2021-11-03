@@ -60,7 +60,6 @@ struct FirstLaunchView: View {
 }
 
 struct FirstLaunchScreen: View {
-    typealias Const = Constants.FirstLaunch
     
     let title: String
     let subtitle: String
@@ -72,11 +71,14 @@ struct FirstLaunchScreen: View {
     
     let animationDuration: Double = 0.5
     
+    private static let AllowAccessBtnPadding: CGFloat = 20
+    private static let IconSize: CGFloat = 100
+    
     var body: some View {
         Group {
             Spacer()
             Image(systemName: image)
-                .font(.system(size: Const.IconSize))
+                .font(.system(size: FirstLaunchScreen.IconSize))
                 .foregroundColor(.gray)
             Text(title)
                 .font(.largeTitle)
@@ -88,7 +90,7 @@ struct FirstLaunchScreen: View {
                 Text(continueButtonLabel)
                     .font(.headline)
                     .padding()
-                    .padding(.horizontal, Const.AllowAccessBtnPadding)
+                    .padding(.horizontal, FirstLaunchScreen.AllowAccessBtnPadding)
                     .background(Color.blue)
                     .clipShape(Capsule())
                     .foregroundColor(.white)
@@ -104,6 +106,7 @@ struct FirstLaunchScreen: View {
 }
 
 struct FirstLaunchView_Previews: PreviewProvider {
+    
     static var previews: some View {
         FirstLaunchView(firstLaunch: FirstLaunch())
     }

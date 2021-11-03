@@ -8,6 +8,7 @@
 import UserNotifications
 
 class NotificationManager {
+    
     private init() {}
     
     static func requestAccess(completionHandler: @escaping (Bool, Error?) -> Void) {
