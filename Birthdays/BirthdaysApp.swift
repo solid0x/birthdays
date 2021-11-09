@@ -9,10 +9,13 @@ import SwiftUI
 
 @main
 struct BirthdaysApp: App {
+    
     @Environment(\.scenePhase) var scenePhase
     
     @StateObject var firstLaunch = FirstLaunch()
     @StateObject var birthdayList = BirthdayList()
+    
+    private var persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
@@ -20,11 +23,11 @@ struct BirthdaysApp: App {
                 BirthdayListView(birthdayList: birthdayList)
             } else {
                 FirstLaunchView(firstLaunch: firstLaunch).onDisappear {
-                    birthdayList.update()
+                    birthdayList.sync()
                 }
             }
         }.onChange(of: scenePhase) { _ in
-            PersistenceController.shared.save()
+            persistenceController.save()
         }
     }
 }

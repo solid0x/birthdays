@@ -10,7 +10,10 @@ import CoreData
 import Contacts
 
 class BirthdayList: ObservableObject {
+    
     @Published var birthdays = [Birthday]()
+    
+    private var birthdayStore: BirthdayStoring
     
     var dateToBirthdays: [(Date, [Birthday])] {
         var result: [Date: [Birthday]] = [:]
@@ -28,49 +31,49 @@ class BirthdayList: ObservableObject {
         birthdays.isEmpty
     }
     
-    var maxId: Int32 {
-        isEmpty ? -1 : birthdays.max { a, b in a.id < b.id }!.id
+    var maxId: Int {
+        isEmpty ? -1 : birthdays.maxId!
     }
     
     var hasAccessToContacts: Bool {
         ContactsViewer.authStatus == .authorized
     }
     
-    init() {
-        update()
+    init(birthdayStore: BirthdayStoring = BirthdayStore.shared) {
+        self.birthdayStore = birthdayStore
+        sync()
     }
     
-    func update() {
-        birthdays = PersistenceController.shared.getAllBirthdays()
-        
-        if ContactsViewer.hasAccessToContacts {
-            let contacts = ContactsViewer.getContacts()
-            for contact in contacts {
-                if let contactBirthday = contact.birthday {
-                    if !birthdays.contains(contact) {
-                        let birthday = Birthday(context: PersistenceController.shared.context)
-                        birthday.id = maxId + 1
-                        birthday.date = Date.from(contactBirthday)
-                        birthday.of = Birthday.nameFor(contact)
-                        birthdays.append(birthday)
-                    }
-                }
-            }
-        }
-        
-        PersistenceController.shared.save()
+    func sync() {
+        birthdays = birthdayStore.syncBirthdays()
+    }
+    
+    func save() {
+        birthdayStore.saveBirthdays()
+    }
+    
+    func update(_ birthday: Birthday) {
+        birthdayStore.updateBirthday(birthday)
+    }
+    
+    func add(date: Date, of: String) {
+        let birthday = Birthday(id: maxId+1, contactId: nil, date: date, of: of)
+        birthdayStore.addBirthday(birthday)
+        birthdays.append(birthday)
+    }
+    
+    func delete(_ birthday: Birthday) {
+        birthdays.remove(birthday)
+        birthdayStore.deleteBirthday(birthday)
     }
 }
 
 extension Birthday {
-    static func nameFor(_ contact: CNContact) -> String {
-        "\(contact.givenName) \(contact.familyName)"
-    }
     
     var nextDate: Date {
-        var nextBirthday = Date.from(year: Date.today.year, month: date!.month, day: date!.day)
+        var nextBirthday = Date.from(year: Date.today.year, month: date.month, day: date.day)
         if Date.today.after(nextBirthday) {
-            nextBirthday = Date.from(year: Date.today.year + 1, month: date!.month, day: date!.day)
+            nextBirthday = Date.from(year: Date.today.year + 1, month: date.month, day: date.day)
         }
         return nextBirthday
     }
@@ -85,20 +88,21 @@ extension Birthday {
 }
 
 extension Array {
+    
     var range: Range<Int> {
         return 0..<self.endIndex
     }
 }
 
-extension Array where Element : Birthday {
-    func contains(_ contact: CNContact) -> Bool {
-        let date = Date.from(contact.birthday!)
-        let of = Birthday.nameFor(contact)
-        return self.contains(where: { $0.date == date && $0.of == of })
+extension Array where Element: Identifiable {
+    
+    mutating func remove(_ element: Element) {
+        self = filter { $0.id != element.id }
     }
 }
 
 extension Calendar {
+    
     func daysFromNow(to: Date) -> Int {
         dateComponents([.day], from: Date.today, to: to.startOfDay).day!
     }

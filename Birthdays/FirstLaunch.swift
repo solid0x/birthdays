@@ -8,6 +8,7 @@
 import SwiftUI
 
 class FirstLaunch: ObservableObject {
+    
     @AppStorage("launchedBefore") private static var launchedBefore = false
     
     @Published private(set) var passed = launchedBefore {

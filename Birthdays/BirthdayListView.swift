@@ -6,8 +6,10 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct BirthdayListView: View {
+    
     @ObservedObject var birthdayList: BirthdayList
     
     var body: some View {
@@ -30,7 +32,11 @@ struct BirthdayListView: View {
                             let (date, birthdays) = birthdayList.dateToBirthdays[i]
                             Section(header: Text("\(date.named)")) {
                                 ForEach(birthdays) { birthday in
-                                    BirthdayListRow(birthday: birthday)
+                                    let index = birthdayList.birthdays.firstIndex(of: birthday)!
+                                    let binding = $birthdayList.birthdays[index]
+                                    NavigationLink(destination: BirthdayDetails(for: binding)) {
+                                        BirthdayRow(for: binding)
+                                    }
                                 }
                             }
                         }
@@ -39,25 +45,31 @@ struct BirthdayListView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
-                    Button(action: {}) {
+                    NavigationLink(destination: BirthdayDetails()) {
                         Image(systemName: "plus.circle.fill")
                         Text("New Birthday")
-                    }.font(.headline)
+                    }
+                    .font(.headline)
                     Spacer()
                 }
             }
             .navigationTitle("Birthdays")
         }
+        .environmentObject(birthdayList)
     }
 }
 
-struct BirthdayListRow: View {
+struct BirthdayRow: View {
     
-    @State var birthday: Birthday
+    @Binding var birthday: Birthday
+    
+    init(for birthday: Binding<Birthday>) {
+        _birthday = birthday
+    }
     
     var body: some View {
         HStack {
-            Text(birthday.of!).font(.headline)
+            Text(birthday.of).font(.headline)
             Spacer()
             if birthday.daysToNextDate == 0 {
                 Image(systemName: "gift").foregroundColor(.blue)
@@ -71,8 +83,119 @@ struct BirthdayListRow: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        BirthdayListView(birthdayList: BirthdayList())
+struct BirthdayDetails: View {
+    
+    @Environment(\.presentationMode) private var presentationMode
+    @EnvironmentObject private var birthdayList: BirthdayList
+    
+    @State private var date: Date
+    @State private var name: String
+    @State private var deleteAlertPresented = false
+    
+    private let birthday: Binding<Birthday>?
+    
+    private var isNew: Bool { birthday == nil }
+    private var isExisting: Bool { !isNew }
+    
+    init(date: Date = Date.today, name: String = "", birthday: Binding<Birthday>? = nil) {
+        _date = State(initialValue: date)
+        _name = State(initialValue: name)
+        self.birthday = birthday
     }
+    
+    init(for birthday: Binding<Birthday>) {
+        self.init(date: birthday.date.wrappedValue, name: birthday.of.wrappedValue, birthday: birthday)
+    }
+    
+    var body: some View {
+        Form {
+            Section(header: Text("Birthday Details")) {
+                TextField("Name", text: $name)
+                DatePicker("Date", selection: $date, displayedComponents: .date)
+            }
+            Button("Save", action: save).font(.headline)
+            if isExisting {
+                Button("Delete") {
+                    deleteAlertPresented = true
+                }
+                .foregroundColor(.red)
+                .alert(isPresented: $deleteAlertPresented) {
+                    Alert(
+                        title: Text("Are you sure?"),
+                        message: Text("This birthday will be deleted"),
+                        primaryButton: .destructive(Text("Delete"), action: delete),
+                        secondaryButton: .cancel()
+                    )
+                }
+            }
+        }
+        .navigationTitle(isNew ? "New Birthday" : "Edit Birthday")
+    }
+    
+    private func save() {
+        if let birthday = birthday {
+            birthday.date.wrappedValue = date
+            birthday.of.wrappedValue = name
+            birthdayList.update(birthday.wrappedValue)
+        } else {
+            birthdayList.add(date: date, of: name)
+        }
+        birthdayList.save()
+        dismissView()
+    }
+    
+    private func delete() {
+        birthdayList.delete(birthday!.wrappedValue)
+        dismissView()
+    }
+    
+    private func dismissView() {
+        presentationMode.wrappedValue.dismiss()
+    }
+}
+
+struct BirthdayListView_Previews: PreviewProvider {
+    
+    static let birthdayStore = BirthdayStore_Preview()
+    
+    static var previews: some View {
+        BirthdayListView(birthdayList: BirthdayList(birthdayStore: birthdayStore))
+    }
+}
+
+struct BirthdayStore_Preview {
+    
+    private static let context = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
+    
+    private var entities = [
+        newEntity(date: Date.today, of: "Contact #1"),
+        newEntity(date: Date.tomorrow, of: "Contact #2")
+    ]
+    
+    private static func newEntity(date: Date, of: String) -> BirthdayEntity {
+        let entity = BirthdayEntity(context: context)
+        entity.id = Int32.random(in: 0...Int32.max)
+        entity.date = date
+        entity.of = of
+        return entity
+    }
+}
+
+extension BirthdayStore_Preview: BirthdayStoring {
+    
+    func addBirthday(_ birthday: Birthday) {}
+    
+    func deleteBirthday(_ birthday: Birthday) {}
+    
+    func saveBirthdays() {}
+    
+    func fetchBirthdays() -> [Birthday] {
+        entities.toBirthdays()
+    }
+    
+    func syncBirthdays() -> [Birthday] {
+        entities.toBirthdays()
+    }
+    
+    func updateBirthday(_ birthday: Birthday) {}
 }

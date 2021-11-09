@@ -6,9 +6,13 @@
 //
 
 import CoreData
+import Contacts
 
 struct PersistenceController {
+    
     static let shared = PersistenceController()
+    
+    private static let ContainerName = "Main"
 
     let container: NSPersistentContainer
     var context: NSManagedObjectContext {
@@ -16,7 +20,7 @@ struct PersistenceController {
     }
 
     private init() {
-        container = NSPersistentContainer(name: Constants.Persistence.ContainerName)
+        container = NSPersistentContainer(name: PersistenceController.ContainerName)
         container.loadPersistentStores(completionHandler: { (description, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -31,18 +35,6 @@ struct PersistenceController {
             } catch {
                 print("Error occured while saving context: \(error.localizedDescription)")
             }
-        }
-    }
-}
-
-extension PersistenceController {
-    func getAllBirthdays() -> [Birthday] {
-        let request: NSFetchRequest = Birthday.fetchRequest()
-        do {
-            return try context.fetch(request)
-        } catch {
-            print("Error occured while fetching all birthdays: \(error.localizedDescription)")
-            return []
         }
     }
 }
