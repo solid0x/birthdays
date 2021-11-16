@@ -28,6 +28,18 @@ extension Date {
         Calendar.current.startOfDay(for: self)
     }
     
+    var second: Int {
+        self.get(.second)
+    }
+    
+    var minute: Int {
+        self.get(.minute)
+    }
+    
+    var hour: Int {
+        self.get(.hour)
+    }
+    
     var day: Int {
         self.get(.day)
     }
@@ -80,5 +92,9 @@ extension Date {
     
     func equals(_ date: Date, granularity: Calendar.Component = .day) -> Bool {
         Calendar.current.compare(self, to: date, toGranularity: granularity) == .orderedSame
+    }
+    
+    func at(hour: Int, minute: Int = 0, second: Int = 0) -> Date? {
+        Calendar.current.date(bySettingHour: hour, minute: minute, second: second, of: self)
     }
 }
