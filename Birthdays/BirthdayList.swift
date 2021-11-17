@@ -11,17 +11,22 @@ import Contacts
 
 class BirthdayList: ObservableObject {
     
-    @Published var birthdays = [Birthday]()
+    @Published var birthdays = [Birthday]() {
+        didSet {
+            scheduleNotifications()
+        }
+    }
     
     private var birthdayStore: BirthdayStoring
+    private var settings: Settings = Settings.shared
     
     var dateToBirthdays: [(Date, [Birthday])] {
         var result: [Date: [Birthday]] = [:]
         for birthday in birthdays {
-            if result[birthday.nextDate] == nil {
-                result[birthday.nextDate] = [birthday]
+            if result[birthday.nearest] == nil {
+                result[birthday.nearest] = [birthday]
             } else {
-                result[birthday.nextDate]!.append(birthday)
+                result[birthday.nearest]!.append(birthday)
             }
         }
         return result.sorted(by: { $0.key < $1.key })
@@ -66,11 +71,28 @@ class BirthdayList: ObservableObject {
         birthdays.remove(birthday)
         birthdayStore.deleteBirthday(birthday)
     }
+    
+    func scheduleNotifications() {
+        Notifications.removeAllPendingRequests()
+        
+        if settings.notificationsEnabled {
+            for birthday in birthdays {
+                scheduleNotification(for: birthday)
+            }
+        }
+    }
+    
+    private func scheduleNotification(for birthday: Birthday) {
+        var annual = Calendar.current.dateComponents([.month, .day], from: birthday.date)
+        annual.hour = settings.notifyAt.hour
+        annual.minute = settings.notifyAt.minute
+        Notifications.schedule(title: birthday.of, subtitle: "Celebrates birthday today", dateMatching: annual)
+    }
 }
 
 extension Birthday {
     
-    var nextDate: Date {
+    var nearest: Date {
         var nextBirthday = Date.from(year: Date.today.year, month: date.month, day: date.day)
         if Date.today.after(nextBirthday) {
             nextBirthday = Date.from(year: Date.today.year + 1, month: date.month, day: date.day)
@@ -78,8 +100,8 @@ extension Birthday {
         return nextBirthday
     }
     
-    var daysToNextDate: Int {
-        return Calendar.current.daysFromNow(to: nextDate)
+    var daysToNearest: Int {
+        return Calendar.current.daysFromNow(to: nearest)
     }
     
     var passed: Bool {

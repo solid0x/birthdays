@@ -22,7 +22,7 @@ class FirstLaunch: ObservableObject {
     }
     
     func requestNotificationsAccess(completionHandler: @escaping (Bool, Error?) -> Void) {
-        NotificationManager.requestAccess(completionHandler: completionHandler)
+        Notifications.requestAccess(completionHandler: completionHandler)
     }
     
     func pass() {

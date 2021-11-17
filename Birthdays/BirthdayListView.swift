@@ -12,6 +12,10 @@ struct BirthdayListView: View {
     
     @ObservedObject var birthdayList: BirthdayList
     
+    var settingsView: some View {
+        SettingsView().onDisappear(perform: birthdayList.scheduleNotifications)
+    }
+    
     var body: some View {
         NavigationView {
             Group {
@@ -44,6 +48,12 @@ struct BirthdayListView: View {
                 }
             }
             .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: settingsView) {
+                        Image(systemName: "gearshape")
+                    }
+                    .font(.headline)
+                }
                 ToolbarItemGroup(placement: .bottomBar) {
                     NavigationLink(destination: BirthdayDetails()) {
                         Image(systemName: "plus.circle.fill")
@@ -71,11 +81,11 @@ struct BirthdayRow: View {
         HStack {
             Text(birthday.of).font(.headline)
             Spacer()
-            if birthday.daysToNextDate == 0 {
+            if birthday.daysToNearest == 0 {
                 Image(systemName: "gift").foregroundColor(.blue)
             } else {
                 VStack {
-                    Text("\(birthday.daysToNextDate)").font(.headline)
+                    Text("\(birthday.daysToNearest)").font(.headline)
                     Text("days").font(.caption)
                 }
             }
