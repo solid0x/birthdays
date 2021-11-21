@@ -7,9 +7,7 @@ extension Date {
     }
     
     static var tomorrow: Date {
-        var dayComponent = DateComponents()
-        dayComponent.day = 1
-        return Calendar.current.date(byAdding: dayComponent, to: Date())!
+        return Calendar.current.date(byAdding: DateComponents(day: 1), to: Date())!
     }
     
     static func from(year: Int, month: Int, day: Int) -> Date {
@@ -22,6 +20,10 @@ extension Date {
     
     static func from(_ dateComponents: DateComponents) -> Date {
         return Calendar.current.date(from: dateComponents)!
+    }
+    
+    var nextDay: Date {
+        return Calendar.current.date(byAdding: DateComponents(day: 1), to: self)!
     }
     
     var startOfDay: Date {
