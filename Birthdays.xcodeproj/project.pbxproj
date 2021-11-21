@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4AF69F2746D9A5003F8200 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B4AF6A12746D9A5003F8200 /* InfoPlist.strings */; };
 		2B6651622717024200563295 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B6651602717024200563295 /* Main.xcdatamodeld */; };
 		2B665164271704FB00563295 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B665163271704FB00563295 /* Persistence.swift */; };
 		2B96B2B1270DED290093D43B /* BirthdayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B0270DED290093D43B /* BirthdayList.swift */; };
@@ -25,6 +26,7 @@
 		2BD0C86B270DE9810047B273 /* BirthdaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */; };
 		2BD0C86D270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */; };
 		2BD756272721921E0014DAAF /* BirthdayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD756262721921E0014DAAF /* BirthdayStore.swift */; };
+		2BF253D5274570C800036F95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BF253D7274570C800036F95 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B4AF6A02746D9A5003F8200 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2B4AF6A22746D9A7003F8200 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B6651612717024200563295 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 		2B665163271704FB00563295 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2B96B2B0270DED290093D43B /* BirthdayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayList.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 		2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysUITests.swift; sourceTree = "<group>"; };
 		2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2BD756262721921E0014DAAF /* BirthdayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayStore.swift; sourceTree = "<group>"; };
+		2BF253D6274570C800036F95 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2BF867DB27458172002251BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,9 +134,11 @@
 				2B96B2BA270DEE290093D43B /* Notifications.swift */,
 				2B96B2BC270DEE3B0093D43B /* DateExtensions.swift */,
 				2B665163271704FB00563295 /* Persistence.swift */,
-				2BD0C853270DE9800047B273 /* Assets.xcassets */,
-				2BD0C855270DE9800047B273 /* Preview Content */,
 				2B6651602717024200563295 /* Main.xcdatamodeld */,
+				2BD0C853270DE9800047B273 /* Assets.xcassets */,
+				2B4AF6A12746D9A5003F8200 /* InfoPlist.strings */,
+				2BF253D7274570C800036F95 /* Localizable.strings */,
+				2BD0C855270DE9800047B273 /* Preview Content */,
 			);
 			path = Birthdays;
 			sourceTree = "<group>";
@@ -246,6 +254,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 2BD0C843270DE97F0047B273;
 			productRefGroup = 2BD0C84D270DE97F0047B273 /* Products */;
@@ -265,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BD0C857270DE9800047B273 /* Preview Assets.xcassets in Resources */,
+				2B4AF69F2746D9A5003F8200 /* InfoPlist.strings in Resources */,
+				2BF253D5274570C800036F95 /* Localizable.strings in Resources */,
 				2BD0C854270DE9800047B273 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +348,27 @@
 			targetProxy = 2BD0C867270DE9810047B273 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B4AF6A12746D9A5003F8200 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B4AF6A02746D9A5003F8200 /* en */,
+				2B4AF6A22746D9A7003F8200 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2BF253D7274570C800036F95 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BF253D6274570C800036F95 /* ru */,
+				2BF867DB27458172002251BD /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2BD0C86E270DE9810047B273 /* Debug */ = {
@@ -467,7 +499,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Birthdays/Info.plist;
-				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays information";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -499,7 +531,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Birthdays/Info.plist;
-				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays information";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

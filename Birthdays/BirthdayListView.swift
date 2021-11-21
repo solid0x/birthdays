@@ -34,7 +34,7 @@ struct BirthdayListView: View {
                     List {
                         ForEach(birthdayList.dateToBirthdays.range, id: \.self) { i in
                             let (date, birthdays) = birthdayList.dateToBirthdays[i]
-                            Section(header: Text("\(date.named)")) {
+                            Section(header: Text(LocalizedStringKey(date.named))) {
                                 ForEach(birthdays) { birthday in
                                     let index = birthdayList.birthdays.firstIndex(of: birthday)!
                                     let binding = $birthdayList.birthdays[index]
@@ -120,7 +120,7 @@ struct BirthdayDetails: View {
     var body: some View {
         Form {
             Section(header: Text("Birthday Details")) {
-                TextField("Name", text: $name)
+                TextField(LocalizedStringKey("Name"), text: $name)
                 DatePicker("Date", selection: $date, displayedComponents: .date)
             }
             Button("Save", action: save).font(.headline)
@@ -169,7 +169,14 @@ struct BirthdayListView_Previews: PreviewProvider {
     static let birthdayStore = BirthdayStore_Preview()
     
     static var previews: some View {
-        BirthdayListView(birthdayList: BirthdayList(birthdayStore: birthdayStore))
+        let birthdayList = BirthdayList(birthdayStore: birthdayStore)
+        let birthdayBinding = Binding.constant(Birthday(id: 0, contactId: nil, date: .today, of: "Contact #1"))
+        
+        ForEachLocale {
+            BirthdayListView(birthdayList: birthdayList)
+            NavigationView { BirthdayDetails() }
+            NavigationView { BirthdayDetails(for: birthdayBinding) }
+        }
     }
 }
 
@@ -179,7 +186,7 @@ struct BirthdayStore_Preview {
     
     private var entities = [
         newEntity(date: Date.today, of: "Contact #1"),
-        newEntity(date: Date.tomorrow, of: "Contact #2")
+        newEntity(date: Date.tomorrow.nextDay, of: "Contact #2")
     ]
     
     private static func newEntity(date: Date, of: String) -> BirthdayEntity {

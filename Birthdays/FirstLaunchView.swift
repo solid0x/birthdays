@@ -61,12 +61,12 @@ struct FirstLaunchView: View {
 
 struct FirstLaunchScreen: View {
     
-    let title: String
-    let subtitle: String
+    let title: LocalizedStringKey
+    let subtitle: LocalizedStringKey
     let image: String
-    let continueButtonLabel: String
+    let continueButtonLabel: LocalizedStringKey
     let continueAction: () -> Void
-    let skipButtonLabel: String
+    let skipButtonLabel: LocalizedStringKey
     let skipAction: () -> Void
     
     let animationDuration: Double = 0.5
@@ -108,6 +108,24 @@ struct FirstLaunchScreen: View {
 struct FirstLaunchView_Previews: PreviewProvider {
     
     static var previews: some View {
-        FirstLaunchView(firstLaunch: FirstLaunch())
+        let firstLaunch = FirstLaunch()
+        
+        ForEachLocale {
+            FirstLaunchView(firstLaunch: firstLaunch)
+            FirstLaunchView(firstLaunch: firstLaunch, showAccessToContacts: false)
+        }
+    }
+}
+
+extension View {
+    
+    func setLocale(_ identifier: String) -> some View {
+        self.environment(\.locale, .init(identifier: identifier))
+    }
+}
+
+func ForEachLocale<Content: View>(@ViewBuilder content: @escaping () -> Content) -> some View {
+    ForEach(Bundle.main.localizations, id: \.self) { locale in
+        content().setLocale(locale)
     }
 }
