@@ -17,9 +17,6 @@ class BirthdayList: ObservableObject {
         }
     }
     
-    private var birthdayStore: BirthdayStoring
-    private var settings: Settings = Settings.shared
-    
     var dateToBirthdays: [(Date, [Birthday])] {
         var result: [Date: [Birthday]] = [:]
         for birthday in birthdays {
@@ -43,6 +40,9 @@ class BirthdayList: ObservableObject {
     var hasAccessToContacts: Bool {
         ContactsViewer.authStatus == .authorized
     }
+    
+    private var birthdayStore: BirthdayStoring
+    private var settings: Settings = Settings.shared
     
     init(birthdayStore: BirthdayStoring = BirthdayStore.shared) {
         self.birthdayStore = birthdayStore
