@@ -22,22 +22,13 @@
 		2BD0C850270DE97F0047B273 /* BirthdaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C84F270DE97F0047B273 /* BirthdaysApp.swift */; };
 		2BD0C854270DE9800047B273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD0C853270DE9800047B273 /* Assets.xcassets */; };
 		2BD0C857270DE9800047B273 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD0C856270DE9800047B273 /* Preview Assets.xcassets */; };
-		2BD0C861270DE9810047B273 /* BirthdaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C860270DE9810047B273 /* BirthdaysTests.swift */; };
-		2BD0C86B270DE9810047B273 /* BirthdaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */; };
-		2BD0C86D270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */; };
 		2BD756272721921E0014DAAF /* BirthdayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD756262721921E0014DAAF /* BirthdayStore.swift */; };
+		2BEEDEFE274E46BB000A5B72 /* BirthdayListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDEFD274E46BB000A5B72 /* BirthdayListTests.swift */; };
 		2BF253D5274570C800036F95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BF253D7274570C800036F95 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		2BD0C85D270DE9810047B273 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2BD0C844270DE97F0047B273 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BD0C84B270DE97F0047B273;
-			remoteInfo = Birthdays;
-		};
-		2BD0C867270DE9810047B273 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2BD0C844270DE97F0047B273 /* Project object */;
 			proxyType = 1;
@@ -65,11 +56,8 @@
 		2BD0C853270DE9800047B273 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BD0C856270DE9800047B273 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2BD0C85C270DE9810047B273 /* BirthdaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirthdaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BD0C860270DE9810047B273 /* BirthdaysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysTests.swift; sourceTree = "<group>"; };
-		2BD0C866270DE9810047B273 /* BirthdaysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirthdaysUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysUITests.swift; sourceTree = "<group>"; };
-		2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2BD756262721921E0014DAAF /* BirthdayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayStore.swift; sourceTree = "<group>"; };
+		2BEEDEFD274E46BB000A5B72 /* BirthdayListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListTests.swift; sourceTree = "<group>"; };
 		2BF253D6274570C800036F95 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2BF867DB27458172002251BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,13 +77,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BD0C863270DE9810047B273 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -104,7 +85,6 @@
 			children = (
 				2BD0C84E270DE97F0047B273 /* Birthdays */,
 				2BD0C85F270DE9810047B273 /* BirthdaysTests */,
-				2BD0C869270DE9810047B273 /* BirthdaysUITests */,
 				2BD0C84D270DE97F0047B273 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,7 +94,6 @@
 			children = (
 				2BD0C84C270DE97F0047B273 /* Birthdays.app */,
 				2BD0C85C270DE9810047B273 /* BirthdaysTests.xctest */,
-				2BD0C866270DE9810047B273 /* BirthdaysUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,18 +133,9 @@
 		2BD0C85F270DE9810047B273 /* BirthdaysTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BD0C860270DE9810047B273 /* BirthdaysTests.swift */,
+				2BEEDEFD274E46BB000A5B72 /* BirthdayListTests.swift */,
 			);
 			path = BirthdaysTests;
-			sourceTree = "<group>";
-		};
-		2BD0C869270DE9810047B273 /* BirthdaysUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */,
-				2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */,
-			);
-			path = BirthdaysUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,24 +176,6 @@
 			productReference = 2BD0C85C270DE9810047B273 /* BirthdaysTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2BD0C865270DE9810047B273 /* BirthdaysUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BD0C876270DE9810047B273 /* Build configuration list for PBXNativeTarget "BirthdaysUITests" */;
-			buildPhases = (
-				2BD0C862270DE9810047B273 /* Sources */,
-				2BD0C863270DE9810047B273 /* Frameworks */,
-				2BD0C864270DE9810047B273 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BD0C868270DE9810047B273 /* PBXTargetDependency */,
-			);
-			name = BirthdaysUITests;
-			productName = BirthdaysUITests;
-			productReference = 2BD0C866270DE9810047B273 /* BirthdaysUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -238,10 +190,6 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					2BD0C85B270DE9810047B273 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 2BD0C84B270DE97F0047B273;
-					};
-					2BD0C865270DE9810047B273 = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 2BD0C84B270DE97F0047B273;
 					};
@@ -263,7 +211,6 @@
 			targets = (
 				2BD0C84B270DE97F0047B273 /* Birthdays */,
 				2BD0C85B270DE9810047B273 /* BirthdaysTests */,
-				2BD0C865270DE9810047B273 /* BirthdaysUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -281,13 +228,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2BD0C85A270DE9810047B273 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BD0C864270DE9810047B273 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -321,16 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BD0C861270DE9810047B273 /* BirthdaysTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BD0C862270DE9810047B273 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2BD0C86B270DE9810047B273 /* BirthdaysUITests.swift in Sources */,
-				2BD0C86D270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift in Sources */,
+				2BEEDEFE274E46BB000A5B72 /* BirthdayListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,11 +272,6 @@
 			isa = PBXTargetDependency;
 			target = 2BD0C84B270DE97F0047B273 /* Birthdays */;
 			targetProxy = 2BD0C85D270DE9810047B273 /* PBXContainerItemProxy */;
-		};
-		2BD0C868270DE9810047B273 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BD0C84B270DE97F0047B273 /* Birthdays */;
-			targetProxy = 2BD0C867270DE9810047B273 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -599,50 +525,6 @@
 			};
 			name = Release;
 		};
-		2BD0C877270DE9810047B273 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.BirthdaysUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Birthdays;
-			};
-			name = Debug;
-		};
-		2BD0C878270DE9810047B273 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.BirthdaysUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Birthdays;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -669,15 +551,6 @@
 			buildConfigurations = (
 				2BD0C874270DE9810047B273 /* Debug */,
 				2BD0C875270DE9810047B273 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2BD0C876270DE9810047B273 /* Build configuration list for PBXNativeTarget "BirthdaysUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BD0C877270DE9810047B273 /* Debug */,
-				2BD0C878270DE9810047B273 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

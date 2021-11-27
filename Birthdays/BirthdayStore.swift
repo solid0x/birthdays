@@ -37,7 +37,7 @@ extension Birthday {
     }
 }
 
-struct BirthdayStore: BirthdayStoring {
+class BirthdayStore: BirthdayStoring {
     
     static let shared = BirthdayStore()
     
