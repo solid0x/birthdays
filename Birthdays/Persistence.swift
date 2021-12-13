@@ -25,7 +25,7 @@ struct PersistenceController {
             do {
                 try context.save()
             } catch {
-                print("Error occured while saving context: \(error.localizedDescription)")
+                Log.error("Error occured while saving context: \(error.localizedDescription)")
             }
         }
     }

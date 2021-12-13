@@ -87,7 +87,7 @@ class BirthdayStore: BirthdayStoring {
             
             saveEntities()
         } else {
-            print("Birthdays sync skipped: no access to contacts.")
+            Log.info("Birthdays sync skipped: no access to contacts.")
         }
         
         return entitiesUpdated.toBirthdays()
@@ -106,7 +106,7 @@ class BirthdayStore: BirthdayStoring {
         do {
             return try persistenceContext.fetch(request).first
         } catch {
-            print("Error occured while fetching birthday with id=\(id): \(error.localizedDescription)")
+            Log.error("Error occured while fetching birthday with id=\(id): \(error.localizedDescription)")
             return nil
         }
     }
@@ -116,7 +116,7 @@ class BirthdayStore: BirthdayStoring {
         do {
             return try persistenceContext.fetch(request)
         } catch {
-            print("Error occured while fetching birthday entities: \(error.localizedDescription)")
+            Log.error("Error occured while fetching birthday entities: \(error.localizedDescription)")
             return []
         }
     }
