@@ -7,20 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B4AF69F2746D9A5003F8200 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B4AF6A12746D9A5003F8200 /* InfoPlist.strings */; };
+		2B6651622717024200563295 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B6651602717024200563295 /* Main.xcdatamodeld */; };
+		2B665164271704FB00563295 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B665163271704FB00563295 /* Persistence.swift */; };
 		2B96B2B1270DED290093D43B /* BirthdayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B0270DED290093D43B /* BirthdayList.swift */; };
 		2B96B2B3270DEDA00093D43B /* FirstLaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B2270DEDA00093D43B /* FirstLaunchView.swift */; };
 		2B96B2B5270DEDBA0093D43B /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B4270DEDBA0093D43B /* FirstLaunch.swift */; };
 		2B96B2B7270DEDDD0093D43B /* BirthdayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B6270DEDDD0093D43B /* BirthdayListView.swift */; };
 		2B96B2B9270DEE150093D43B /* ContactsViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2B8270DEE150093D43B /* ContactsViewer.swift */; };
-		2B96B2BB270DEE290093D43B /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2BA270DEE290093D43B /* NotificationManager.swift */; };
+		2B96B2BB270DEE290093D43B /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2BA270DEE290093D43B /* Notifications.swift */; };
 		2B96B2BD270DEE3B0093D43B /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2BC270DEE3B0093D43B /* DateExtensions.swift */; };
-		2B96B2BF270DEE580093D43B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96B2BE270DEE580093D43B /* Constants.swift */; };
+		2B96EBB42742986700DB3F51 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96EBB32742986700DB3F51 /* SettingsView.swift */; };
+		2B96EBB62742987500DB3F51 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B96EBB52742987500DB3F51 /* Settings.swift */; };
 		2BD0C850270DE97F0047B273 /* BirthdaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C84F270DE97F0047B273 /* BirthdaysApp.swift */; };
 		2BD0C854270DE9800047B273 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD0C853270DE9800047B273 /* Assets.xcassets */; };
 		2BD0C857270DE9800047B273 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD0C856270DE9800047B273 /* Preview Assets.xcassets */; };
-		2BD0C861270DE9810047B273 /* BirthdaysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C860270DE9810047B273 /* BirthdaysTests.swift */; };
-		2BD0C86B270DE9810047B273 /* BirthdaysUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */; };
-		2BD0C86D270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */; };
+		2BD756272721921E0014DAAF /* BirthdayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD756262721921E0014DAAF /* BirthdayStore.swift */; };
+		2BE86C7B27678E280051CBBB /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE86C7A27678E280051CBBB /* Log.swift */; };
+		2BEEDEFE274E46BB000A5B72 /* BirthdayListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEDEFD274E46BB000A5B72 /* BirthdayListTests.swift */; };
+		2BF253D5274570C800036F95 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2BF253D7274570C800036F95 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,33 +36,32 @@
 			remoteGlobalIDString = 2BD0C84B270DE97F0047B273;
 			remoteInfo = Birthdays;
 		};
-		2BD0C867270DE9810047B273 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2BD0C844270DE97F0047B273 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2BD0C84B270DE97F0047B273;
-			remoteInfo = Birthdays;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B4AF6A02746D9A5003F8200 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2B4AF6A22746D9A7003F8200 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2B6651612717024200563295 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		2B665163271704FB00563295 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		2B96B2B0270DED290093D43B /* BirthdayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayList.swift; sourceTree = "<group>"; };
 		2B96B2B2270DEDA00093D43B /* FirstLaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchView.swift; sourceTree = "<group>"; };
 		2B96B2B4270DEDBA0093D43B /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		2B96B2B6270DEDDD0093D43B /* BirthdayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListView.swift; sourceTree = "<group>"; };
 		2B96B2B8270DEE150093D43B /* ContactsViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewer.swift; sourceTree = "<group>"; };
-		2B96B2BA270DEE290093D43B /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		2B96B2BA270DEE290093D43B /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		2B96B2BC270DEE3B0093D43B /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
-		2B96B2BE270DEE580093D43B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2B96EBB32742986700DB3F51 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2B96EBB52742987500DB3F51 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		2BD0C84C270DE97F0047B273 /* Birthdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD0C84F270DE97F0047B273 /* BirthdaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysApp.swift; sourceTree = "<group>"; };
 		2BD0C853270DE9800047B273 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2BD0C856270DE9800047B273 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2BD0C85C270DE9810047B273 /* BirthdaysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirthdaysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BD0C860270DE9810047B273 /* BirthdaysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysTests.swift; sourceTree = "<group>"; };
-		2BD0C866270DE9810047B273 /* BirthdaysUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirthdaysUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysUITests.swift; sourceTree = "<group>"; };
-		2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2BD756262721921E0014DAAF /* BirthdayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayStore.swift; sourceTree = "<group>"; };
+		2BE86C7A27678E280051CBBB /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		2BEEDEFD274E46BB000A5B72 /* BirthdayListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListTests.swift; sourceTree = "<group>"; };
+		2BF253D6274570C800036F95 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2BF867DB27458172002251BD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,13 +79,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BD0C863270DE9810047B273 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,7 +87,6 @@
 			children = (
 				2BD0C84E270DE97F0047B273 /* Birthdays */,
 				2BD0C85F270DE9810047B273 /* BirthdaysTests */,
-				2BD0C869270DE9810047B273 /* BirthdaysUITests */,
 				2BD0C84D270DE97F0047B273 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,7 +96,6 @@
 			children = (
 				2BD0C84C270DE97F0047B273 /* Birthdays.app */,
 				2BD0C85C270DE9810047B273 /* BirthdaysTests.xctest */,
-				2BD0C866270DE9810047B273 /* BirthdaysUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,11 +108,18 @@
 				2B96B2B2270DEDA00093D43B /* FirstLaunchView.swift */,
 				2B96B2B0270DED290093D43B /* BirthdayList.swift */,
 				2B96B2B6270DEDDD0093D43B /* BirthdayListView.swift */,
+				2B96EBB52742987500DB3F51 /* Settings.swift */,
+				2B96EBB32742986700DB3F51 /* SettingsView.swift */,
+				2BD756262721921E0014DAAF /* BirthdayStore.swift */,
 				2B96B2B8270DEE150093D43B /* ContactsViewer.swift */,
-				2B96B2BA270DEE290093D43B /* NotificationManager.swift */,
+				2B96B2BA270DEE290093D43B /* Notifications.swift */,
 				2B96B2BC270DEE3B0093D43B /* DateExtensions.swift */,
-				2B96B2BE270DEE580093D43B /* Constants.swift */,
+				2B665163271704FB00563295 /* Persistence.swift */,
+				2BE86C7A27678E280051CBBB /* Log.swift */,
+				2B6651602717024200563295 /* Main.xcdatamodeld */,
 				2BD0C853270DE9800047B273 /* Assets.xcassets */,
+				2B4AF6A12746D9A5003F8200 /* InfoPlist.strings */,
+				2BF253D7274570C800036F95 /* Localizable.strings */,
 				2BD0C855270DE9800047B273 /* Preview Content */,
 			);
 			path = Birthdays;
@@ -134,18 +136,9 @@
 		2BD0C85F270DE9810047B273 /* BirthdaysTests */ = {
 			isa = PBXGroup;
 			children = (
-				2BD0C860270DE9810047B273 /* BirthdaysTests.swift */,
+				2BEEDEFD274E46BB000A5B72 /* BirthdayListTests.swift */,
 			);
 			path = BirthdaysTests;
-			sourceTree = "<group>";
-		};
-		2BD0C869270DE9810047B273 /* BirthdaysUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2BD0C86A270DE9810047B273 /* BirthdaysUITests.swift */,
-				2BD0C86C270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift */,
-			);
-			path = BirthdaysUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,24 +179,6 @@
 			productReference = 2BD0C85C270DE9810047B273 /* BirthdaysTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2BD0C865270DE9810047B273 /* BirthdaysUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2BD0C876270DE9810047B273 /* Build configuration list for PBXNativeTarget "BirthdaysUITests" */;
-			buildPhases = (
-				2BD0C862270DE9810047B273 /* Sources */,
-				2BD0C863270DE9810047B273 /* Frameworks */,
-				2BD0C864270DE9810047B273 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2BD0C868270DE9810047B273 /* PBXTargetDependency */,
-			);
-			name = BirthdaysUITests;
-			productName = BirthdaysUITests;
-			productReference = 2BD0C866270DE9810047B273 /* BirthdaysUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,10 +196,6 @@
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 2BD0C84B270DE97F0047B273;
 					};
-					2BD0C865270DE9810047B273 = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 2BD0C84B270DE97F0047B273;
-					};
 				};
 			};
 			buildConfigurationList = 2BD0C847270DE97F0047B273 /* Build configuration list for PBXProject "Birthdays" */;
@@ -234,6 +205,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 2BD0C843270DE97F0047B273;
 			productRefGroup = 2BD0C84D270DE97F0047B273 /* Products */;
@@ -242,7 +214,6 @@
 			targets = (
 				2BD0C84B270DE97F0047B273 /* Birthdays */,
 				2BD0C85B270DE9810047B273 /* BirthdaysTests */,
-				2BD0C865270DE9810047B273 /* BirthdaysUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,18 +224,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BD0C857270DE9800047B273 /* Preview Assets.xcassets in Resources */,
+				2B4AF69F2746D9A5003F8200 /* InfoPlist.strings in Resources */,
+				2BF253D5274570C800036F95 /* Localizable.strings in Resources */,
 				2BD0C854270DE9800047B273 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2BD0C85A270DE9810047B273 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BD0C864270DE9810047B273 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -278,15 +244,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B665164271704FB00563295 /* Persistence.swift in Sources */,
 				2B96B2B7270DEDDD0093D43B /* BirthdayListView.swift in Sources */,
+				2B96EBB62742987500DB3F51 /* Settings.swift in Sources */,
+				2BD756272721921E0014DAAF /* BirthdayStore.swift in Sources */,
 				2B96B2B3270DEDA00093D43B /* FirstLaunchView.swift in Sources */,
 				2BD0C850270DE97F0047B273 /* BirthdaysApp.swift in Sources */,
 				2B96B2B1270DED290093D43B /* BirthdayList.swift in Sources */,
-				2B96B2BB270DEE290093D43B /* NotificationManager.swift in Sources */,
+				2B6651622717024200563295 /* Main.xcdatamodeld in Sources */,
+				2B96B2BB270DEE290093D43B /* Notifications.swift in Sources */,
 				2B96B2BD270DEE3B0093D43B /* DateExtensions.swift in Sources */,
+				2B96EBB42742986700DB3F51 /* SettingsView.swift in Sources */,
+				2BE86C7B27678E280051CBBB /* Log.swift in Sources */,
 				2B96B2B9270DEE150093D43B /* ContactsViewer.swift in Sources */,
 				2B96B2B5270DEDBA0093D43B /* FirstLaunch.swift in Sources */,
-				2B96B2BF270DEE580093D43B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,16 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BD0C861270DE9810047B273 /* BirthdaysTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2BD0C862270DE9810047B273 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2BD0C86B270DE9810047B273 /* BirthdaysUITests.swift in Sources */,
-				2BD0C86D270DE9810047B273 /* BirthdaysUITestsLaunchTests.swift in Sources */,
+				2BEEDEFE274E46BB000A5B72 /* BirthdayListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,12 +277,28 @@
 			target = 2BD0C84B270DE97F0047B273 /* Birthdays */;
 			targetProxy = 2BD0C85D270DE9810047B273 /* PBXContainerItemProxy */;
 		};
-		2BD0C868270DE9810047B273 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 2BD0C84B270DE97F0047B273 /* Birthdays */;
-			targetProxy = 2BD0C867270DE9810047B273 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2B4AF6A12746D9A5003F8200 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2B4AF6A02746D9A5003F8200 /* en */,
+				2B4AF6A22746D9A7003F8200 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2BF253D7274570C800036F95 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2BF253D6274570C800036F95 /* ru */,
+				2BF867DB27458172002251BD /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2BD0C86E270DE9810047B273 /* Debug */ = {
@@ -447,13 +425,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthdays/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Q29KV8QPY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Birthdays/Info.plist;
-				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays information";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -462,7 +440,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Birthdays;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matty.Birthdays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -478,13 +456,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Birthdays/Preview Content\"";
+				DEVELOPMENT_TEAM = 3Q29KV8QPY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Birthdays/Info.plist;
-				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays information";
+				INFOPLIST_KEY_NSContactsUsageDescription = "Allow access to get birthdays";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -493,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Birthdays;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matty.Birthdays;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -549,50 +527,6 @@
 			};
 			name = Release;
 		};
-		2BD0C877270DE9810047B273 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.BirthdaysUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Birthdays;
-			};
-			name = Debug;
-		};
-		2BD0C878270DE9810047B273 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.BirthdaysUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Birthdays;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -623,16 +557,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BD0C876270DE9810047B273 /* Build configuration list for PBXNativeTarget "BirthdaysUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2BD0C877270DE9810047B273 /* Debug */,
-				2BD0C878270DE9810047B273 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2B6651602717024200563295 /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2B6651612717024200563295 /* Main.xcdatamodel */,
+			);
+			currentVersion = 2B6651612717024200563295 /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2BD0C844270DE97F0047B273 /* Project object */;
 }

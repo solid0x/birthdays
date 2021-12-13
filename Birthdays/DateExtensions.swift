@@ -1,14 +1,13 @@
 import Foundation
 
 extension Date {
+    
     static var today: Date {
         return Date().startOfDay
     }
     
     static var tomorrow: Date {
-        var dayComponent = DateComponents()
-        dayComponent.day = 1
-        return Calendar.current.date(byAdding: dayComponent, to: Date())!
+        return Calendar.current.date(byAdding: DateComponents(day: 1), to: Date())!
     }
     
     static func from(year: Int, month: Int, day: Int) -> Date {
@@ -23,8 +22,24 @@ extension Date {
         return Calendar.current.date(from: dateComponents)!
     }
     
+    var nextDay: Date {
+        return Calendar.current.date(byAdding: DateComponents(day: 1), to: self)!
+    }
+    
     var startOfDay: Date {
         Calendar.current.startOfDay(for: self)
+    }
+    
+    var second: Int {
+        self.get(.second)
+    }
+    
+    var minute: Int {
+        self.get(.minute)
+    }
+    
+    var hour: Int {
+        self.get(.hour)
     }
     
     var day: Int {
@@ -73,7 +88,15 @@ extension Date {
         Calendar.current.compare(self, to: date, toGranularity: granularity) == .orderedDescending
     }
     
+    func before(_ date: Date, granularity: Calendar.Component = .day) -> Bool {
+        Calendar.current.compare(self, to: date, toGranularity: granularity) == .orderedAscending
+    }
+    
     func equals(_ date: Date, granularity: Calendar.Component = .day) -> Bool {
         Calendar.current.compare(self, to: date, toGranularity: granularity) == .orderedSame
+    }
+    
+    func at(hour: Int, minute: Int = 0, second: Int = 0) -> Date? {
+        Calendar.current.date(bySettingHour: hour, minute: minute, second: second, of: self)
     }
 }

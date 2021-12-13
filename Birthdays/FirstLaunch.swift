@@ -1,13 +1,7 @@
-//
-//  FirstLaunch.swift
-//  Birthdays
-//
-//  Created by letvarx on 22.09.2021.
-//
-
 import SwiftUI
 
 class FirstLaunch: ObservableObject {
+    
     @AppStorage("launchedBefore") private static var launchedBefore = false
     
     @Published private(set) var passed = launchedBefore {
@@ -21,7 +15,7 @@ class FirstLaunch: ObservableObject {
     }
     
     func requestNotificationsAccess(completionHandler: @escaping (Bool, Error?) -> Void) {
-        NotificationManager.requestAccess(completionHandler: completionHandler)
+        Notifications.requestAccess(completionHandler: completionHandler)
     }
     
     func pass() {
