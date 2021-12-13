@@ -1,10 +1,3 @@
-//
-//  SettingsView.swift
-//  Birthdays
-//
-//  Created by letvarx on 15.11.2021.
-//
-
 import SwiftUI
 
 struct SettingsView: View {

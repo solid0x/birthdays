@@ -1,10 +1,3 @@
-//
-//  Notifications.swift
-//  Birthdays
-//
-//  Created by letvarx on 30.09.2021.
-//
-
 import UserNotifications
 
 class Notifications {

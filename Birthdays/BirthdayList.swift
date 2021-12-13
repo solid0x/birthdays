@@ -1,13 +1,4 @@
-//
-//  BirthdaysViewModel.swift
-//  Birthdays
-//
-//  Created by letvarx on 16.09.2021.
-//
-
 import SwiftUI
-import CoreData
-import Contacts
 
 class BirthdayList: ObservableObject {
     

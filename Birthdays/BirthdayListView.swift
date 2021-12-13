@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  Birthdays
-//
-//  Created by letvarx on 15.09.2021.
-//
-
 import SwiftUI
 import CoreData
 
