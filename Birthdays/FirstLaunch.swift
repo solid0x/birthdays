@@ -1,10 +1,3 @@
-//
-//  FirstLaunch.swift
-//  Birthdays
-//
-//  Created by letvarx on 22.09.2021.
-//
-
 import SwiftUI
 
 class FirstLaunch: ObservableObject {

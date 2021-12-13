@@ -1,10 +1,3 @@
-//
-//  BirthdayListTests.swift
-//  BirthdaysTests
-//
-//  Created by letvarx on 24.11.2021.
-//
-
 import XCTest
 @testable import Birthdays
 

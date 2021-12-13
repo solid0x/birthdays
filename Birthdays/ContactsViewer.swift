@@ -1,10 +1,3 @@
-//
-//  ContactsViewer.swift
-//  Birthdays
-//
-//  Created by letvarx on 22.09.2021.
-//
-
 import Contacts
 
 class ContactsViewer {

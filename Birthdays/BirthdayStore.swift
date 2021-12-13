@@ -1,10 +1,3 @@
-//
-//  BirthdayStore.swift
-//  Birthdays
-//
-//  Created by letvarx on 21.10.2021.
-//
-
 import Foundation
 import CoreData
 import Contacts

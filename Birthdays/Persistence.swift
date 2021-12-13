@@ -1,12 +1,4 @@
-//
-//  Persistence.swift
-//  Birthdays
-//
-//  Created by letvarx on 13.10.2021.
-//
-
 import CoreData
-import Contacts
 
 struct PersistenceController {
     

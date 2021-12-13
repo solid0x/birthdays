@@ -1,10 +1,3 @@
-//
-//  BirthdaysApp.swift
-//  Birthdays
-//
-//  Created by letvarx on 15.09.2021.
-//
-
 import SwiftUI
 
 @main
