@@ -82,6 +82,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B8C2F2027A8039B00A882AF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B96B2B4270DEDBA0093D43B /* FirstLaunch.swift */,
+				2B96B2B0270DED290093D43B /* BirthdayList.swift */,
+				2B96EBB52742987500DB3F51 /* Settings.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B8C2F2127A803CA00A882AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BD756262721921E0014DAAF /* BirthdayStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B8C2F2227A803D400A882AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B96B2B2270DEDA00093D43B /* FirstLaunchView.swift */,
+				2B96B2B6270DEDDD0093D43B /* BirthdayListView.swift */,
+				2B96EBB32742986700DB3F51 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2BD0C843270DE97F0047B273 = {
 			isa = PBXGroup;
 			children = (
@@ -103,14 +131,10 @@
 		2BD0C84E270DE97F0047B273 /* Birthdays */ = {
 			isa = PBXGroup;
 			children = (
+				2B8C2F2227A803D400A882AF /* View */,
+				2B8C2F2127A803CA00A882AF /* Model */,
+				2B8C2F2027A8039B00A882AF /* ViewModel */,
 				2BD0C84F270DE97F0047B273 /* BirthdaysApp.swift */,
-				2B96B2B4270DEDBA0093D43B /* FirstLaunch.swift */,
-				2B96B2B2270DEDA00093D43B /* FirstLaunchView.swift */,
-				2B96B2B0270DED290093D43B /* BirthdayList.swift */,
-				2B96B2B6270DEDDD0093D43B /* BirthdayListView.swift */,
-				2B96EBB52742987500DB3F51 /* Settings.swift */,
-				2B96EBB32742986700DB3F51 /* SettingsView.swift */,
-				2BD756262721921E0014DAAF /* BirthdayStore.swift */,
 				2B96B2B8270DEE150093D43B /* ContactsViewer.swift */,
 				2B96B2BA270DEE290093D43B /* Notifications.swift */,
 				2B96B2BC270DEE3B0093D43B /* DateExtensions.swift */,

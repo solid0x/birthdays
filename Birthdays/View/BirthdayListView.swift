@@ -149,6 +149,7 @@ struct BirthdayDetails: View {
     
     private func delete() {
         birthdayList.delete(birthday!.wrappedValue)
+        birthdayList.save()
         dismissView()
     }
     

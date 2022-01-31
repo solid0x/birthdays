@@ -43,7 +43,9 @@ struct FirstLaunchView: View {
     
     private func requestNotificationsAccess() {
         firstLaunch.requestNotificationsAccess { _, _ in
-            firstLaunch.pass()
+            DispatchQueue.main.async {
+                firstLaunch.pass()
+            }
         }
     }
     

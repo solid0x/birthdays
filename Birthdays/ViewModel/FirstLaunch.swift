@@ -19,8 +19,6 @@ class FirstLaunch: ObservableObject {
     }
     
     func pass() {
-        DispatchQueue.main.async {
-            self.passed = true
-        }
+        self.passed = true
     }
 }

@@ -3,12 +3,8 @@ import SwiftUI
 @main
 struct BirthdaysApp: App {
     
-    @Environment(\.scenePhase) var scenePhase
-    
     @StateObject var firstLaunch = FirstLaunch()
     @StateObject var birthdayList = BirthdayList()
-    
-    private var persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
@@ -19,8 +15,6 @@ struct BirthdaysApp: App {
                     birthdayList.sync()
                 }
             }
-        }.onChange(of: scenePhase) { _ in
-            persistenceController.save()
         }
     }
 }
